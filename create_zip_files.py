@@ -11,7 +11,10 @@ with  ZipFile(zip_path, 'w') as zip_file:
         zip_file.write(file)
 print("Список доступных файлов в архиве:")
 print(zip_file.namelist())
+<<<<<<< HEAD
 
 
 
 
+=======
+>>>>>>> 8bee059777464f039d310555918a5ce202ab98b9
