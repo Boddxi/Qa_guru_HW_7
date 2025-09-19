@@ -6,7 +6,7 @@ from io import TextIOWrapper
 import os.path
 
 
-def test_checking_the_contents_of_zip_pdf_csv_files():
+def test_checking_the_contents_of_zip_pdf_csv_xlsx_files():
     with ZipFile('resources/documents.zip') as zip_file:
         print("Список доступных файлов в архиве:")
         print(zip_file.namelist())
