@@ -1,4 +1,6 @@
 from zipfile import ZipFile
+from pypdf import PdfReader
+import csv
 import PyPDF2
 from io import BytesIO
 import pandas as pd
@@ -18,7 +20,7 @@ def test_checking_the_contents_of_zip_pdf_csv_xlsx_files():
             print(text_pdf)
             assert "PBR руководство от Allegorithmic" in text_pdf
         with zip_file.open('File_folder/File_xls.xlsx') as xlsx_file:
-            reader_xlsx = pd.read_excel(BytesIO(xlsx_file.read()), engine='openpyxl')
+            reader_xlsx = pd.read_excel(xlsx_file.read())
             print("Содержимое файла XlSX:")
             print(reader_xlsx)
             assert 'ширина' in reader_xlsx.columns
@@ -30,4 +32,5 @@ def test_checking_the_contents_of_zip_pdf_csv_xlsx_files():
             column_names = list(reader_csv.columns)
             print(column_names)
             assert ['Статус;Дата;Комментарий;Серийный номер;Обработка'] == column_names
+
 
